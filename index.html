@@ -344,10 +344,10 @@
       margin: 0;
     }
 
-    /* CARDS GRID */
+    /* CARDS GRID (LAGE) */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
@@ -382,48 +382,48 @@
       font-size: 0.95rem;
     }
 
-    /* WOHNUNGSANGEBOT / APARTMENTS */
+    /* WOHNUNGSANGEBOT (RESPONSIVE CARDS) */
     .apartments-section {
       background-color: #f3f4f6;
     }
 
-    .table-container {
+    .apartments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .apt-card {
       background: var(--bg-card);
       border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
       border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
     }
 
-    .apt-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
+    .apt-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(180, 140, 90, 0.4);
     }
 
-    .apt-table th {
-      background: var(--primary);
-      color: #fff;
-      padding: 1.2rem 1.5rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .apt-table td {
-      padding: 1.2rem 1.5rem;
+    .apt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
       border-bottom: 1px solid var(--border);
-      color: var(--text);
-      font-size: 0.98rem;
     }
 
-    .apt-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .apt-table tr:hover {
-      background-color: #faf8f5;
+    .apt-header h3 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: var(--primary);
     }
 
     .badge-attika {
@@ -431,8 +431,8 @@
       color: #fff;
       font-size: 0.75rem;
       font-weight: 600;
-      padding: 0.25rem 0.65rem;
-      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      border-radius: 50px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -442,9 +442,53 @@
       color: var(--primary-soft);
       font-size: 0.75rem;
       font-weight: 600;
-      padding: 0.25rem 0.65rem;
-      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      border-radius: 50px;
       text-transform: uppercase;
+    }
+
+    .apt-body {
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .apt-location {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.6rem;
+    }
+
+    .apt-features {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .apt-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .apt-btn {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color 0.2s;
+    }
+
+    .apt-btn:hover {
+      color: var(--accent);
     }
 
     /* GALLERY */
@@ -597,7 +641,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: gap;
+      flex-wrap: wrap;
       gap: 1.5rem;
     }
 
@@ -621,6 +665,12 @@
     @media (max-width: 600px) {
       .hero-facts-bar {
         grid-template-columns: 1fr;
+      }
+      .apartments-grid {
+        grid-template-columns: 1fr;
+      }
+      .apt-card {
+        padding: 1.5rem;
       }
       .contact-form {
         padding: 1.5rem;
@@ -676,7 +726,7 @@
         </div>
         <div class="fact-item">
           <h4>Ausbau</h4>
-          <div class="fact-val">Premium-Ausbau</div>
+          <div class="fact-val">Premium (Miele)</div>
         </div>
       </div>
     </div>
@@ -752,7 +802,7 @@
         <div class="card">
           <div class="card-icon">🚌</div>
           <h3>ÖV direkt vor der Haustür</h3>
-          <p>Die Haltestelle des öffentlichen Verkehrs befindet sich unmittelbar vor dem Eingang. Das Auto parkt in der Tiefgarage.</p>
+          <p>Die Haltestelle des öffentlichen Verkehrs befindet sich unmittelbar vor dem Eingang. Schnelle und bequeme Mobilität garantiert.</p>
         </div>
 
         <div class="card">
@@ -776,7 +826,7 @@
     </div>
   </section>
 
-  <!-- WOHNUNGSANGEBOT -->
+  <!-- WOHNUNGSANGEBOT (RESPONSIVE CARDS) -->
   <section id="wohnungen" class="apartments-section">
     <div class="container">
       <div class="section-header">
@@ -785,58 +835,119 @@
         <p class="section-desc">6 exklusive Einheiten mit grosszügigen Grundrissen, viel Licht und Panoramablick.</p>
       </div>
 
-      <div class="table-container">
-        <table class="apt-table">
-          <thead>
-            <tr>
-              <th>Objekt</th>
-              <th>Typ / Zimmer</th>
-              <th>Ausstattung & Highlights</th>
-              <th>Verfügbarkeit</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Top 1</strong></td>
-              <td><span class="badge-standard">4.5 Zimmer</span> Erdgeschoss / Garten</td>
-              <td>Miele-Küche, grosser privater Garten-/Terrassenbereich, Bergblick</td>
-              <td>Ab Dez. 2027</td>
-            </tr>
-            <tr>
-              <td><strong>Top 2</strong></td>
-              <td><span class="badge-standard">4.5 Zimmer</span> Erdgeschoss / Garten</td>
-              <td>Miele-Küche, sonniger Aussenbereich, helle Wohnräume</td>
-              <td>Ab Dez. 2027</td>
-            </tr>
-            <tr>
-              <td><strong>Top 3</strong></td>
-              <td><span class="badge-standard">4.5 Zimmer</span> 1. Obergeschoss</td>
-              <td>Weitblick Dreischwestern & Hoher Kasten, grosser Balkon, Miele-Ausstattung</td>
-              <td>Ab Dez. 2027</td>
-            </tr>
-            <tr>
-              <td><strong>Top 4</strong></td>
-              <td><span class="badge-standard">4.5 Zimmer</span> 1. Obergeschoss</td>
-              <td>Optimale Besonnung, Panoramaverglasung, offener Koch-/Essbereich</td>
-              <td>Ab Dez. 2027</td>
-            </tr>
-            <tr>
-              <td><strong>Top 5</strong></td>
-              <td><span class="badge-attika">3.5 Zimmer Attika</span> Dachgeschoss</td>
-              <td>Exklusive Attikawohnung mit weitläufiger Rundum-Dachterrasse und Luxusküche</td>
-              <td>Ab Dez. 2027</td>
-            </tr>
-            <tr>
-              <td><strong>Top 6</strong></td>
-              <td><span class="badge-attika">3.5 Zimmer Attika</span> Dachgeschoss</td>
-              <td>Premium-Attika mit spektakulärem Ost-West-Panoramablick und Privatsphäre</td>
-              <td>Ab Dez. 2027</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="apartments-grid">
+        
+        <!-- TOP 1 -->
+        <div class="apt-card">
+          <div>
+            <div class="apt-header">
+              <h3>Top 1</h3>
+              <span class="badge-standard">4.5 Zimmer</span>
+            </div>
+            <div class="apt-body">
+              <div class="apt-location">Erdgeschoss · Garten</div>
+              <p class="apt-features">Miele-Küche, grosser privater Garten- und Terrassenbereich mit wunderschönem Bergblick.</p>
+            </div>
+          </div>
+          <div class="apt-footer">
+            <span>Bezug ab Dez. 2027</span>
+            <a href="#kontakt" class="apt-btn">Anfragen &rarr;</a>
+          </div>
+        </div>
+
+        <!-- TOP 2 -->
+        <div class="apt-card">
+          <div>
+            <div class="apt-header">
+              <h3>Top 2</h3>
+              <span class="badge-standard">4.5 Zimmer</span>
+            </div>
+            <div class="apt-body">
+              <div class="apt-location">Erdgeschoss · Garten</div>
+              <p class="apt-features">Miele-Küche, sonniger privater Aussenbereich und grosszügige, lichtdurchflutete Wohnräume.</p>
+            </div>
+          </div>
+          <div class="apt-footer">
+            <span>Bezug ab Dez. 2027</span>
+            <a href="#kontakt" class="apt-btn">Anfragen &rarr;</a>
+          </div>
+        </div>
+
+        <!-- TOP 3 -->
+        <div class="apt-card">
+          <div>
+            <div class="apt-header">
+              <h3>Top 3</h3>
+              <span class="badge-standard">4.5 Zimmer</span>
+            </div>
+            <div class="apt-body">
+              <div class="apt-location">1. Obergeschoss</div>
+              <p class="apt-features">Weitblick Dreischwestern & Hoher Kasten, grosser Balkon und erstklassige Miele-Küchenausstattung.</p>
+            </div>
+          </div>
+          <div class="apt-footer">
+            <span>Bezug ab Dez. 2027</span>
+            <a href="#kontakt" class="apt-btn">Anfragen &rarr;</a>
+          </div>
+        </div>
+
+        <!-- TOP 4 -->
+        <div class="apt-card">
+          <div>
+            <div class="apt-header">
+              <h3>Top 4</h3>
+              <span class="badge-standard">4.5 Zimmer</span>
+            </div>
+            <div class="apt-body">
+              <div class="apt-location">1. Obergeschoss</div>
+              <p class="apt-features">Optimale Besonnung, grossflächige Panoramaverglasung und weitläufiger, offener Koch-/Essbereich.</p>
+            </div>
+          </div>
+          <div class="apt-footer">
+            <span>Bezug ab Dez. 2027</span>
+            <a href="#kontakt" class="apt-btn">Anfragen &rarr;</a>
+          </div>
+        </div>
+
+        <!-- TOP 5 -->
+        <div class="apt-card" style="border-top: 3px solid var(--accent);">
+          <div>
+            <div class="apt-header">
+              <h3>Top 5</h3>
+              <span class="badge-attika">3.5 Zimmer Attika</span>
+            </div>
+            <div class="apt-body">
+              <div class="apt-location">Dachgeschoss / Attika</div>
+              <p class="apt-features">Exklusive Attikawohnung mit weitläufiger Rundum-Dachterrasse, Luxusküche und unverbaubarem Panorama.</p>
+            </div>
+          </div>
+          <div class="apt-footer">
+            <span>Bezug ab Dez. 2027</span>
+            <a href="#kontakt" class="apt-btn">Anfragen &rarr;</a>
+          </div>
+        </div>
+
+        <!-- TOP 6 -->
+        <div class="apt-card" style="border-top: 3px solid var(--accent);">
+          <div>
+            <div class="apt-header">
+              <h3>Top 6</h3>
+              <span class="badge-attika">3.5 Zimmer Attika</span>
+            </div>
+            <div class="apt-body">
+              <div class="apt-location">Dachgeschoss / Attika</div>
+              <p class="apt-features">Premium-Attika mit spektakulärem Ost-West-Panoramablick, höchster Privatsphäre und moderner Raumaufteilung.</p>
+            </div>
+          </div>
+          <div class="apt-footer">
+            <span>Bezug ab Dez. 2027</span>
+            <a href="#kontakt" class="apt-btn">Anfragen &rarr;</a>
+          </div>
+        </div>
+
       </div>
       
-      <div style="text-align: center; margin-top: 2rem;">
+      <div style="text-align: center; margin-top: 2.5rem;">
         <p style="color: var(--text-muted); font-size: 0.95rem;">
           Detaillierte Grundrisspläne und Mietpreise erhalten Sie gerne unverbindlich auf Anfrage.
         </p>
