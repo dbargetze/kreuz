@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MFH Kreuz Schellenberg | Exklusives Wohnen zur Miete</title>
+  <meta name="description" content="Neubau MFH Kreuz in Schellenberg, Liechtenstein. Exklusive 3.5- und 4.5-Zimmer-Mietwohnungen an bester Aussichtslage. Baubeginn Sept. 2026, Bezug Dez. 2027.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1e293b;
+      --primary-soft: #334155;
+      --accent: #b48c5a;
+      --accent-hover: #9c7343;
+      --accent-light: #f7f3ee;
+      --bg: #fafaf9;
+      --bg-card: #ffffff;
+      --text: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.07);
+      --shadow-lg: 0 12px 30px rgba(0,0,0,0.09);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .serif-font {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+    }
+
+    /* HEADER & NAV */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+
+    .logo-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.05em;
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-soft);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.8rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn-accent:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      background: linear-gradient(135deg, #182230 0%, #29384d 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      mix-blend-mode: luminosity;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      z-index: 2;
+    }
+
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      color: #ffffff;
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1.15;
+      max-width: 800px;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero p {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      max-width: 650px;
+      color: #e2e8f0;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-facts-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 1.8rem;
+      border-radius: var(--radius);
+      max-width: 860px;
+    }
+
+    .fact-item h4 {
+      color: var(--accent-light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .fact-item .fact-val {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* SECTION BASICS */
+    section {
+      padding: 6rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* HIGHLIGHTS / 2-COL */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .img-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .img-box:hover img {
+      transform: scale(1.03);
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .feature-text strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-text p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(180, 140, 90, 0.4);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* WOHNUNGSANGEBOT / APARTMENTS */
+    .apartments-section {
+      background-color: #f3f4f6;
+    }
+
+    .table-container {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .apt-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .apt-table th {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.2rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .apt-table td {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .apt-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .apt-table tr:hover {
+      background-color: #faf8f5;
+    }
+
+    .badge-attika {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-standard {
+      background: #e2e8f0;
+      color: var(--primary-soft);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-md);
+      min-height: 280px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(15, 23, 42, 0.85));
+      color: #fff;
+      padding: 1.5rem 1.2rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    /* CONTACT / CTA */
+    .contact-section {
+      background: linear-gradient(135deg, #182230 0%, #233144 100%);
+      color: #ffffff;
+      position: relative;
+    }
+
+    .contact-section h2 {
+      color: #ffffff;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact-info h3 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-info p {
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #e2e8f0;
+      font-size: 1.1rem;
+    }
+
+    .contact-row a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--accent);
+      transition: color 0.2s;
+    }
+
+    .contact-row a:hover {
+      color: var(--accent);
+    }
+
+    .contact-form {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      color: var(--text);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3rem 1.5rem 2rem;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: gap;
+      gap: 1.5rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .two-col-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .col-6, .col-4, .col-8 {
+        grid-column: span 12;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero-facts-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-facts-bar {
+        grid-template-columns: 1fr;
+      }
+      .contact-form {
+        padding: 1.5rem;
+      }
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-main">MFH KREUZ</span>
+        <span class="logo-sub">SCHELLENBERG</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#projekt">Das Projekt</a></li>
+          <li><a href="#lage">Lage & Vorzüge</a></li>
+          <li><a href="#wohnungen">Wohnungsangebot</a></li>
+          <li><a href="#impressionen">Impressionen</a></li>
+          <li><a href="#kontakt" class="btn btn-accent" style="padding: 0.55rem 1.2rem; font-size: 0.85rem;">Mietinteresse bekunden</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="2420_Bargetze_Flug_V2_MAIL.jpg" alt="MFH Kreuz Schellenberg Visualisierung" class="hero-bg">
+    <div class="hero-content">
+      <div class="tag-badge">Neubau-Mietwohnungen</div>
+      <h1>Exklusives Wohnen zur Miete «Top of Schellenberg»</h1>
+      <p>An bester erhöhter Lage mit atemberaubendem Panoramablick nach Osten auf die Dreischwestern und nach Westen auf den Hohen Kasten.</p>
+      
+      <div class="hero-facts-bar">
+        <div class="fact-item">
+          <h4>Baubeginn</h4>
+          <div class="fact-val">September 2026</div>
+        </div>
+        <div class="fact-item">
+          <h4>Bezugsbereit</h4>
+          <div class="fact-val">Dezember 2027</div>
+        </div>
+        <div class="fact-item">
+          <h4>Einheiten</h4>
+          <div class="fact-val">6 Exklusive Mietobjekte</div>
+        </div>
+        <div class="fact-item">
+          <h4>Ausbau</h4>
+          <div class="fact-val">High-End (Miele)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJEKT ÜBERSICHT -->
+  <section id="projekt">
+    <div class="container">
+      <div class="two-col-grid">
+        <div>
+          <span class="section-subtitle">Architektur & Komfort</span>
+          <h2 class="section-title">Harmonie aus Design, Natur und höchster Wohnqualität</h2>
+          <p style="color: var(--text-muted); margin-bottom: 1rem;">
+            Das Mehrfamilienhaus <strong>MFH Kreuz</strong> setzt neue Massstäbe für anspruchsvolles Wohnen in Schellenberg. Die moderne, elegante Fassadenstruktur und grosszügig gestaltete Fensterfronten verbinden Innen- und Aussenraum auf natürliche Weise.
+          </p>
+          <p style="color: var(--text-muted);">
+            Hier fühlen sich alle Generationen rundum wohl – ob Familien, Paare oder Alleinstehende, die Wert auf Ruhe, Komfort und eine intakte Gemeinschaft legen.
+          </p>
+
+          <ul class="feature-list">
+            <li>
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <strong>Hochwertiger Ausbaustandard</strong>
+                <p>Moderne Küchen mit energieeffizienten Miele-Geräten, edle Materialien und langlebige Bauweise.</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <strong>Grosszügige Aussenbereiche</strong>
+                <p>Weite Terrassen, Balkone und Gartenanteile mit unverbaubarer Weitsicht in die Bergwelt.</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <strong>Barrierefreier Komfort</strong>
+                <p>Bequemer Zugang, durchdachte Grundrisse und moderne Haustechnik auf aktuellem Stand.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="img-box">
+          <img src="2420_Bargetze_Strasse_V2_MAIL.jpg" alt="Aussenansicht Strassenseite MFH Kreuz">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS / LAGE -->
+  <section id="lage" style="background-color: var(--accent-light);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Schellenberg</span>
+        <h2 class="section-title">Privilegierte Wohnlage mit perfekter Anbindung</h2>
+        <p class="section-desc">Erleben Sie die Vorzüge einer idyllischen Gemeinde kombiniert mit erstklassiger Infrastruktur.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🏔️</div>
+          <h3>Traumhaftes Bergpanorama</h3>
+          <p>Beste erhöhte Lage: Geniessen Sie das morgendliche Licht über der Dreischwestern-Kette im Osten und die Abendsonne mit Blick zum Hohen Kasten im Westen.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🛍️</div>
+          <h3>5 Minuten zum Dorfzentrum</h3>
+          <p>Der Dorfladen und alle wichtigen Nahversorger im Gemeindezentrum sind in nur 5 Gehminuten bequem erreichbar.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🚌</div>
+          <h3>ÖV direkt vor der Haustür</h3>
+          <p>Die Haltestelle des öffentlichen Verkehrs befindet sich unmittelbar vor dem Eingang. Höchste Mobilität ganz ohne Parkplatzsorgen.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🚗</div>
+          <h3>Staufreie Anbindung</h3>
+          <p>Schnelle und direkte Verbindungen zu allen Unterländer Gemeinden Liechtensteins und staufrei bis zum nächsten Autobahnanschluss.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🏡</div>
+          <h3>Lebendige Dorfgemeinschaft</h3>
+          <p>Schellenberg zeichnet sich durch hohe Lebensqualität, aktive Vereine und eine sichere, herzliche Umgebung für Gross und Klein aus.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3>Erstbezug ab Dez. 2027</h3>
+          <p>Seien Sie von Anfang an dabei und sichern Sie sich frühzeitig Ihr neues Zuhause im modernen Erstbezug.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WOHNUNGSANGEBOT -->
+  <section id="wohnungen" class="apartments-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Übersicht Mietobjekte</span>
+        <h2 class="section-title">Die Wohnungen im MFH Kreuz</h2>
+        <p class="section-desc">6 exklusive Einheiten mit grosszügigen Grundrissen, viel Licht und Panoramablick.</p>
+      </div>
+
+      <div class="table-container">
+        <table class="apt-table">
+          <thead>
+            <tr>
+              <th>Objekt</th>
+              <th>Typ / Zimmer</th>
+              <th>Ausstattung & Highlights</th>
+              <th>Verfügbarkeit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Top 1</strong></td>
+              <td><span class="badge-standard">4.5 Zimmer</span> Erdgeschoss / Garten</td>
+              <td>Miele-Küche, grosser privater Garten-/Terrassenbereich, Bergblick</td>
+              <td>Ab Dez. 2027</td>
+            </tr>
+            <tr>
+              <td><strong>Top 2</strong></td>
+              <td><span class="badge-standard">4.5 Zimmer</span> Erdgeschoss / Garten</td>
+              <td>Miele-Küche, sonniger Aussenbereich, helle Wohnräume</td>
+              <td>Ab Dez. 2027</td>
+            </tr>
+            <tr>
+              <td><strong>Top 3</strong></td>
+              <td><span class="badge-standard">4.5 Zimmer</span> 1. Obergeschoss</td>
+              <td>Weitblick Dreischwestern & Hoher Kasten, grosser Balkon, Miele-Ausstattung</td>
+              <td>Ab Dez. 2027</td>
+            </tr>
+            <tr>
+              <td><strong>Top 4</strong></td>
+              <td><span class="badge-standard">4.5 Zimmer</span> 1. Obergeschoss</td>
+              <td>Optimale Besonnung, Panoramaverglasung, offener Koch-/Essbereich</td>
+              <td>Ab Dez. 2027</td>
+            </tr>
+            <tr>
+              <td><strong>Top 5</strong></td>
+              <td><span class="badge-attika">3.5 Zimmer Attika</span> Dachgeschoss</td>
+              <td>Exklusive Attikawohnung mit weitläufiger Rundum-Dachterrasse und Luxusküche</td>
+              <td>Ab Dez. 2027</td>
+            </tr>
+            <tr>
+              <td><strong>Top 6</strong></td>
+              <td><span class="badge-attika">3.5 Zimmer Attika</span> Dachgeschoss</td>
+              <td>Premium-Attika mit spektakulärem Ost-West-Panoramablick und Privatsphäre</td>
+              <td>Ab Dez. 2027</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Detaillierte Grundrisspläne und Mietpreise erhalten Sie gerne unverbindlich auf Anfrage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPRESSIONEN / GALERIE -->
+  <section id="impressionen">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Visualisierungen</span>
+        <h2 class="section-title">Einblick in Ihr künftiges Zuhause</h2>
+        <p class="section-desc">Architektur, Licht und Wohlfühlambiente bis ins kleinste Detail.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item col-8">
+          <img src="2420_Bargetze_EG_Innen_01_MAIL.jpg" alt="Offener Wohn- und Essbereich mit Miele Küche">
+          <div class="gallery-caption">Lichtdurchfluteter Wohn- und Essbereich mit moderner Kücheninsel</div>
+        </div>
+        <div class="gallery-item col-4">
+          <img src="2420_Bargetze_Attika_Aussen_01_MAIL.jpg" alt="Attika Terrasse mit Bergblick">
+          <div class="gallery-caption">Grosszügige Attikaterrasse mit Traumpanorama</div>
+        </div>
+        <div class="gallery-item col-6">
+          <img src="2420_Bargetze_Flug_V2_MAIL.jpg" alt="Vogelperspektive MFH Kreuz Schellenberg">
+          <div class="gallery-caption">Erhöhte Aussichtslage eingebettet in die Natur</div>
+        </div>
+        <div class="gallery-item col-6">
+          <img src="2420_Bargetze_Strasse_V2_MAIL.jpg" alt="Zugang und Fassadengestaltung">
+          <div class="gallery-caption">Elegante Architektur mit strukturierten Fassadenelementen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT & ANFRAGE -->
+  <section id="kontakt" class="contact-section">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <span class="section-subtitle" style="color: #d1a877;">Kontakt & Vormerkung</span>
+          <h2>Interesse an einer Mietwohnung?</h2>
+          <p>
+            Möchten Sie sich unverbindlich für eine der 3.5- oder 4.5-Zimmer-Wohnungen im MFH Kreuz vormerken lassen oder die Vermietungsunterlagen anfordern? Wir freuen uns auf Ihre Kontaktaufnahme.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-row">
+              <span style="font-size: 1.4rem;">✉️</span>
+              <div>
+                <span style="display:block; font-size: 0.85rem; color: #94a3b8;">Direkte E-Mail:</span>
+                <a href="mailto:info@kreuz.li">info@kreuz.li</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span style="font-size: 1.4rem;">📍</span>
+              <div>
+                <span style="display:block; font-size: 0.85rem; color: #94a3b8;">Standort:</span>
+                <strong>Schellenberg, Fürstentum Liechtenstein</strong>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span style="font-size: 1.4rem;">📅</span>
+              <div>
+                <span style="display:block; font-size: 0.85rem; color: #94a3b8;">Termine:</span>
+                <span>Baubeginn 09/2026 · Bezug 12/2027</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.4rem; color: var(--primary);">Mietinteresse mitteilen</h3>
+          <form action="mailto:info@kreuz.li" method="POST" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Vorname & Nachname *</label>
+              <input type="text" id="name" name="Name" class="form-control" placeholder="z. B. Anna Müller" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-Mail-Adresse *</label>
+              <input type="email" id="email" name="E-Mail" class="form-control" placeholder="ihre.adresse@beispiel.li" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefonnummer</label>
+              <input type="tel" id="phone" name="Telefon" class="form-control" placeholder="+423 ...">
+            </div>
+            <div class="form-group">
+              <label for="wohnung">Interesse an Objekt</label>
+              <select id="wohnung" name="Wohnungstyp" class="form-control">
+                <option value="allgemein">Noch offen / allgemeines Interesse</option>
+                <option value="Top 1">Top 1 (4.5 Zimmer, EG/Garten)</option>
+                <option value="Top 2">Top 2 (4.5 Zimmer, EG/Garten)</option>
+                <option value="Top 3">Top 3 (4.5 Zimmer, 1. OG)</option>
+                <option value="Top 4">Top 4 (4.5 Zimmer, 1. OG)</option>
+                <option value="Top 5">Top 5 (3.5 Zimmer Attika)</option>
+                <option value="Top 6">Top 6 (3.5 Zimmer Attika)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Ihre Nachricht / Fragen</label>
+              <textarea id="message" name="Nachricht" rows="3" class="form-control" placeholder="Ihre Fragen oder Wünsche..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">Anfrage absenden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong style="color: #fff; font-size: 1rem;">MFH Kreuz Schellenberg</strong><br>
+        Exklusives Wohnen zur Miete · Schellenberg, Liechtenstein
+      </div>
+      <div>
+        Kontakt: <a href="mailto:info@kreuz.li" style="color: var(--accent); text-decoration: none;">info@kreuz.li</a>
+      </div>
+      <div>
+        © 2026 MFH Kreuz. Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
